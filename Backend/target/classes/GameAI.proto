@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "code.controller.communication.gameai";
+//option java_outer_classname = "";
+
+
+service GameAi {
+  rpc GiveBestMove (BoardStateRequest) returns (ColumnReply);
+}
+
+message BoardStateRequest {
+  repeated SingleDimensionArray boardArray = 1;
+}
+
+message SingleDimensionArray {
+  repeated int32 array = 1;
+}
+
+message ColumnReply {
+  int32 bestColumn = 1;
+}
+

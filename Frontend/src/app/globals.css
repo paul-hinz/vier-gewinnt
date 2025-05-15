@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+main {
+  /* min-height: 423px; */
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 350px;
+}
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: 435px;
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  width: 522px;
+}
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 609px;
+}
+.grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  width: 696px;
+}
+.grid-cols-9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  width: 783px;
+}
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  width: 870px;
+}
+.grid-cols-11 {
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  width: 957px;
+}
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 1044px;
+}
+.grid-cols-13 {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+  width: 1131px;
+}
+.grid-cols-14 {
+  grid-template-columns: repeat(14, minmax(0, 1fr));
+  width: 1218px;
+}
+.grid-cols-15 {
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  width: 1305px;
+}
+.grid-cols-16 {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  width: 1392px;
+}
+.grid-cols-17 {
+  grid-template-columns: repeat(17, minmax(0, 1fr));
+  width: 1479px;
+}
+.grid-cols-18 {
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  width: 1566px;
+}
+.grid-cols-19 {
+  grid-template-columns: repeat(19, minmax(0, 1fr));
+  width: 1653px;
+}
+.grid-cols-20 {
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  width: 1740px;
+}

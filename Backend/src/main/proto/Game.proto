@@ -1,0 +1,144 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "code.controller.communication.game";
+//option java_outer_classname = "";
+
+service Game {
+  rpc GetLobbies (Void) returns (GetLobbiesResponse) {}
+  rpc CreateLobby (CreateLobbyRequest) returns (CreateLobbyResponse) {}
+  rpc JoinLobby (JoinLobbyRequest) returns (JoinLobbyResponse) {}
+  rpc PollGameData (PollRequest) returns (stream ResponseStream) {}
+  rpc StartGame (StartRequest) returns (Void) {}
+  rpc MakeMove (MoveRequest) returns (Void) {}
+  rpc PostTwitter (TwitterRequest) returns (TwitterSuccess) {}
+}
+
+message GetLobbiesResponse {
+  repeated Lobby lobbies = 1;
+}
+
+message Lobby {
+  string id = 1;
+}
+
+message CreateLobbyRequest {
+  string ownName = 1;
+  int32 gameTime = 2;
+  int32 boardRowCount = 3;
+  int32 boardColCount = 4;
+  Enemy enemy = 5;
+}
+
+enum Enemy {
+  AI = 0;
+  PVP = 1;
+}
+
+message CreateLobbyResponse {
+  bool success = 1;
+  int32 lobbyID = 2;
+  int32 clientID = 3;
+}
+
+message JoinLobbyRequest {
+  string ownName = 1; //name of the player who wants to join the lobby
+  int32 lobbyID = 2;
+}
+
+message JoinLobbyResponse {
+  bool success = 1;
+  string enemyName = 2; //name of the enemy that is waiting in the lobby
+  int32 gameTime = 3;
+  int32 boardRowCount = 4;
+  int32 boardColCount = 5;
+  int32 clientID = 6;
+}
+
+message ResponseStream {
+  oneof action {
+    Begin begin = 1;
+    SetStone setStone = 2;
+    UpdateTimer updateTimer = 3;
+    SetWinner setWinner = 4;
+    EnemyData setEnemy = 5;
+  }
+}
+
+message PollRequest{
+  int32 clientID = 1;
+}
+
+message Begin {
+  bool begin = 1;
+}
+
+message TwitterSuccess {
+  bool success = 1;
+}
+
+message StartGame {
+  bool startGame = 1;
+}
+
+message SetStone {
+  int32 col = 1;
+}
+
+message UpdateTimer {
+  int32 timeLeft = 1;
+}
+
+message MoveRequest {
+  int32 clientID = 1;
+  int32 col = 2;
+}
+
+message StartRequest {
+  int32 clientID = 1;
+}
+
+message TwitterRequest {
+  int32 clientID = 1;
+}
+
+message SetWinner {
+  bool winner = 1;
+}
+
+message EnemyData {
+  int32 enemyID = 1;
+  string enemyName = 2;
+}
+
+message Void {}
+
+/*
+GetLobbys:
+- getLobbys
+
+CreateRoom:
+- setOwnName (an Server)
+- setGameTime (an Server)
+- chooseEnemy _ ENUM (an Server)
+- setBoardSize (an Server)
+- newLobby (an Server)
+Wahrscheinlich hier stream response bis jemand joint
+
+JoinRoom:
+- join (an Server) ergibt sich aus dem Funktionsaufruf
+- setOwnName (an Server)
+- setGameTime (an beide Spieler)    bekommt per Response
+- setBoardSize (an beide Spieler)   der andere per Stream
+- setEnemyName (an beide Spieler)   der beitretende
+
+
+Game (=> Stream):
+- begin
+- setStone
+- updateTimer
+- startGame
+- makeMove
+- setWinner
+
+ */
