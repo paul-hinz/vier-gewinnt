@@ -1,16 +1,15 @@
 # VS-VierGewinnt
 
 
-
-## Beschreibung
-
-Ziel des Projekts ist es, ein Vier-Gewinnt Spiel auf Basis verteilter Systeme zu entwerfen und entwickeln, bei dem man gegen einer KI oder einem Spieler spielen kann.
+Ein Online Vier-Gewinnt Spiel, bei dem der Nutzer gegen eine KI oder einen Spieler spielen kann.
 
 
-##Entwicklung
+## Entwicklung
+
+Backend: Paul Hinz
 
 Frontend: Dominik Hipke
-Backend: Paul Hinz
+
 
 ## Requirements
 
@@ -19,4 +18,4 @@ Backend: Paul Hinz
 -  GameAI: Python 3.12 inkl. pytorch
 -  Kommunikation: Docker Desktop
 -  Dependency-Verwaltung: Maven 3.9+
--  Versionsverwaltung git mit Zugang zu diesem Repository ;)
+-  Versionsverwaltung: git 
