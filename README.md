@@ -6,12 +6,11 @@
 
 Ziel des Projekts ist es, ein Vier-Gewinnt Spiel auf Basis verteilter Systeme zu entwerfen und entwickeln, bei dem man gegen einer KI oder einem Spieler spielen kann.
 
-## Dokumentation
 
-Das rohe Dokumentationsdokument ist in Teams zu finden: [öffnen](https://hawhamburgedu.sharepoint.com/:w:/s/VSPraktikumWiSe2324/EV5Gz6epzmNDpMTFkYGqFVEBPryI-AMx7_uvma2XT2Izmg?e=uFCodw)
+##Entwicklung
 
-Für die Abgabe ist die Version vom 22.01. als PDF im obersten Ordner zu finden.
-
+Frontend: Dominik Hipke
+Backend: Paul Hinz
 
 ## Requirements
 
