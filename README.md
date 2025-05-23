@@ -1,7 +1,9 @@
-# VS-VierGewinnt
+# VierGewinnt
 
+**Jetzt [HIER](http://3.71.250.119) ausprobieren!**
 
 Ein Online Vier-Gewinnt Spiel, bei dem der Nutzer gegen eine KI oder einen Spieler spielen kann.
+
 
 
 ## Entwicklung
@@ -11,11 +13,11 @@ Backend: Paul Hinz
 Frontend: Dominik Hipke
 
 
-## Requirements
+## TechStack
 
--  Backend: Java Version 17+ inkl. JUnit5, gRPC
--  Frontend: Next.js Version 14 inkl. gRPC-web
--  GameAI: Python 3.12 inkl. pytorch
--  Kommunikation: Docker Desktop
--  Dependency-Verwaltung: Maven 3.9+
+-  Backend: Java
+-  Frontend: Next.js 
+-  GameAI: Python
+-  Kommunikation: gRPC
+-  Deployement: Docker auf AWS
 -  Versionsverwaltung: git 
